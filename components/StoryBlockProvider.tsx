@@ -1,30 +1,23 @@
-import {storyblokInit, apiPlugin, ISbStoryData} from "@storyblok/react";
-import * as process from "process";
-import {ReactNode} from "react";
-import {PageStoryblok} from "@/types/sb-types";
-import Grid from "@/components/Grid";
-import Teaser from "@/components/Teaser";
-import Page from "@/components/Page";
+"use client";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
-type LayoutProps = {
-    children: ReactNode
-    story: ISbStoryData<PageStoryblok>
-}
+/** Import your components */
+import Page from "./Page";
+import Teaser from "./Teaser";
+import Grid from "./Grid";
 
 const components = {
-    page: Page,
     grid: Grid,
-    teaser: Teaser
-}
+    teaser: Teaser,
+    page: Page,
+};
 
-/** 2. Initialize it as usual */
 storyblokInit({
-    accessToken: process.env.STORYBLOK_PREVIEW_TOKEN,
+    accessToken: "your_preview_token",
     use: [apiPlugin],
     components
 });
 
-
-export default function StoryblokProvider({children}:{children:ReactNode}) {
+export default function StoryblokProvider({ children }) {
     return children;
-};
+}

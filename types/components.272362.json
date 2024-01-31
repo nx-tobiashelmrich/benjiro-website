@@ -50,11 +50,18 @@
       "name": "page",
       "display_name": null,
       "created_at": "2024-01-23T15:58:53.852Z",
-      "updated_at": "2024-01-23T15:58:53.852Z",
+      "updated_at": "2024-01-30T21:26:19.122Z",
       "id": 5218837,
       "schema": {
         "body": {
-          "type": "bloks"
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "grid",
+            "teaser",
+            "feature"
+          ]
         }
       },
       "image": null,

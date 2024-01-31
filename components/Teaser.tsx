@@ -1,11 +1,7 @@
-import {StoryblokComponent, storyblokEditable} from "@storyblok/react";
-import React from "react";
-import {TeaserStoryblok} from "@/types/sb-types";
+import { storyblokEditable } from "@storyblok/react/rsc";
 
-const Teaser = (story: TeaserStoryblok) => (
-    <main {...storyblokEditable(story)}>
-        <StoryblokComponent blok={story} key={story._uid} />
-    </main>
-);
+const Teaser = ({ blok }) => {
+    return <h2 {...storyblokEditable(blok)}>{blok.headline}</h2>;
+};
 
 export default Teaser;

@@ -1,12 +1,13 @@
-import {GridStoryblok} from "@/types/sb-types";
-// @ts-ignore
-import {StoryblokComponent, storyblokEditable} from "@storyblok/react/rsc";
-import React from "react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
-const Grid = (story: GridStoryblok) => (
-    <main {...storyblokEditable(story)}>
-        <StoryblokComponent blok={story} key={story._uid}/>
-    </main>
-)
+const Grid = ({ blok }) => {
+    return (
+        <div  {...storyblokEditable(blok)}>
+            {blok.columns.map((nestedBlok) => (
+                <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+            ))}
+        </div>
+    );
+};
 
 export default Grid;
