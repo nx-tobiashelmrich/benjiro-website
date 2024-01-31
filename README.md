@@ -20,6 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Run on HTTPS
+"proxy": "npx local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
+``` bash
+mkcert localhost
+```
+
+```bash
+yarn proxy
+```
+
+You can generate the required certificates and keys as explained here: https://github.com/cameronhunter/local-ssl-proxy#run-ssl-proxy-with-a-self-signed-trusted-certificate
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
